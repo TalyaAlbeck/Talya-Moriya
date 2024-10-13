@@ -8,4 +8,12 @@ li.edit span {
 
 li.edit input {
   display: initial;
+}
+
+li button {
+  padding: 0;
+}
+li button img {
+  margin-top: 1px;
+  height: 15px;
 }/*# sourceMappingURL=log-in.css.map */

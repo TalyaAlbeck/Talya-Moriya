@@ -24,13 +24,14 @@
 
     <template id="list">
         <h1>to-do list:</h1>
-        <button id="addT" class="button">add task</button>
-        <button id="removeT" class="button">remove task</button>
+        <button id="addT">add task</button>
+
 
         <ul id="TDlist">
             <li>
-                <span></span>
-                <input value="">
+                <span>homework</span>
+                <input value="homework">
+                <button class="removeItem"><img src="../photos/FontAwesome-Trash-Can-icon.png"></button>
             </li>
         </ul>
         <button id="save" class="button">save</button>
@@ -39,6 +40,7 @@
         <li class="edit">
             <span></span>
             <input class="input" value="">
+            <button class="removeItem"><img src="../photos/FontAwesome-Trash-Can-icon.png"></button>
         </li>
     </template>
 

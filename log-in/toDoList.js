@@ -4,15 +4,19 @@ let TDlist = document.getElementById("TDlist");
 // let tasks = TDlist.querySelectorAll("li")
 // let inputs = TDlist.querySelectorAll("input")
 
-function addEditClass() {
+function addEditAndRemoveClass() {
     let tasks = TDlist.querySelectorAll("li")
     let inputs = TDlist.querySelectorAll("input")
     for (let i = 0; i < tasks.length; i++) {
         tasks[i].addEventListener("click", editTasks);
         inputs[i].addEventListener("blur", updateTasks);
     }
+    const removerButtons=document.getElementsByClassName("removeItem")
+    for (let j=0;j<removerButtons.length;j++){
+    removerButtons[j].addEventListener('click',removeItem);
 }
-
+}
+addEditAndRemoveClass()
 function editTasks() {
     this.classList = "edit";
     let input = this.querySelector("input");
