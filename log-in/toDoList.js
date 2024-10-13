@@ -51,11 +51,9 @@ function addTask(e) {
 
 //save the list in local storage
 
-function saveInLS() {
+function saveInServer() {
     console.log("hi");
-    let toDoList = document.getElementById("TDlist")
-    let localStorage = JSON.stringify(toDoList)
-    console.log(localStorage);
+    console.log(toDoList);
 }
 
-document.getElementById("save").addEventListener("click", saveInLS)
+document.getElementById("save").addEventListener("click", saveInServer)
