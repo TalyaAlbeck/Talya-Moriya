@@ -1,4 +1,5 @@
 
+let index = 0;
 let TDlist = document.getElementById("TDlist");
 // let tasks = TDlist.querySelectorAll("li")
 // let inputs = TDlist.querySelectorAll("input")
@@ -32,11 +33,18 @@ document.getElementById("addT").addEventListener("click", addTask)
 function addTask(e) {
     e.preventDefault();
     let add = document.getElementsByClassName("add")[0]
-    let clon = add.content.cloneNode(true)
-    TDlist.appendChild(clon)
+    const div = document.createElement("div");
+
+    let clon = add.content.cloneNode(true);
+    div.append(clon)
+    div.setAttribute("data-key", index);
+
+    TDlist.appendChild(div)
     let li = document.getElementsByTagName("li");
     let liItem = li[li.length - 1]
-    let nInput = document.getElementsByClassName('input')[0];
+    let nInput = document.getElementsByClassName('input')[index];
+
     liItem.addEventListener("click", editTasks);
     nInput.addEventListener("blur", updateTasks);
+    index++;
 }
