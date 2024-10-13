@@ -13,6 +13,7 @@ function addEditClass() {
 
     }
 }
+addEditClass()
 
 function editTasks() {
     this.classList = "edit";
