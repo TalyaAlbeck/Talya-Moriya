@@ -1,23 +1,21 @@
-function checkRequestType(request) {
-    if (/*pressed log in */) {
-        request = get()
-    } else if () {
 
-    } else if () {
 
-    } else if () {
-
+function checkRequestType(requestObj) {
+    if (requestObj.request === "get") {
+        get(requestObj.url)
+    } else if (requestObj.request === "post") {
+        post(requestObj.url, requestObj.content)
+    } else if (requestObj.request === "put") {
+        put(requestObj.url, requestObj.content)
     } else {
         console.log("this kind of request is not defind");
     }
 }
 
-function get() {
-    container.innerHTML = JSON.parse(whatever)
+function get(url) {
+
 }
 
-function post() {
-    let list = JSON.stringify(TDlist)
-}
+function post(url, content) {
 
-requestArr = [{ request: "get", content: "#" }, { request: "post", content: "#" }]
+}
