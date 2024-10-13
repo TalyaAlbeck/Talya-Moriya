@@ -4,6 +4,7 @@ let TDlist = document.getElementById("TDlist");
 // let tasks = TDlist.querySelectorAll("li")
 // let inputs = TDlist.querySelectorAll("input")
 
+
 function addEditAndRemoveClass() {
     let tasks = TDlist.querySelectorAll("li")
     let inputs = TDlist.querySelectorAll("input")
@@ -11,10 +12,10 @@ function addEditAndRemoveClass() {
         tasks[i].addEventListener("click", editTasks);
         inputs[i].addEventListener("blur", updateTasks);
     }
-    const removerButtons=document.getElementsByClassName("removeItem")
-    for (let j=0;j<removerButtons.length;j++){
-    removerButtons[j].addEventListener('click',removeItem);
-}
+    const removerButtons = document.getElementsByClassName("removeItem")
+    for (let j = 0; j < removerButtons.length; j++) {
+        removerButtons[j].addEventListener('click', removeItem);
+    }
 }
 addEditAndRemoveClass()
 function editTasks() {
@@ -50,8 +51,15 @@ function addTask(e) {
     liItem.addEventListener("click", editTasks);
     nInput.addEventListener("blur", updateTasks);
     index++;
-}
 
+    let removerButtons = document.getElementsByClassName("removeItem")
+    removerButtons[removerButtons.length - 1].addEventListener('click', removeItem);
+
+}
+//remove item
+function removeItem() {
+    this.parentNode.remove()
+}
 
 //save the list in local storage
 
