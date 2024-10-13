@@ -16,7 +16,6 @@ function addEditClass() {
 function editTasks() {
     this.classList = "edit";
     let input = this.querySelector("input");
-    // console.log(this);
 
     input.focus();
     input.setSelectionRange(0, input.value.length)
@@ -48,3 +47,15 @@ function addTask(e) {
     nInput.addEventListener("blur", updateTasks);
     index++;
 }
+
+
+//save the list in local storage
+
+function saveInLS() {
+    console.log("hi");
+    let toDoList = document.getElementById("TDlist")
+    let localStorage = JSON.stringify(toDoList)
+    console.log(localStorage);
+}
+
+document.getElementById("save").addEventListener("click", saveInLS)
