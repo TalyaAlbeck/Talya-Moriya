@@ -6,7 +6,8 @@ const container = document.getElementsByClassName("container")[0];
 function showPage(tem) {
     const template = document.querySelector(tem);
     container.innerHTML = ``;
-    container.appendChild(template.content);
+    const clon = template.content.cloneNode(true)
+    container.appendChild(clon);
 }
 
 // showPage("#log-in-page")
