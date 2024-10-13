@@ -11,6 +11,7 @@ function addEditAndRemoveClass() {
     for (let i = 0; i < tasks.length; i++) {
         tasks[i].addEventListener("click", editTasks);
         inputs[i].addEventListener("blur", updateTasks);
+        inputs[i].addEventListener('keypress',itemKeypress);
     }
     const removerButtons = document.getElementsByClassName("removeItem")
     for (let j = 0; j < removerButtons.length; j++) {
@@ -23,7 +24,8 @@ function editTasks() {
     let input = this.querySelector("input");
 
     input.focus();
-    input.setSelectionRange(0, input.value.length)
+    input.setSelectionRange(0, input.value.length);
+
 }
 
 function updateTasks() {
@@ -31,6 +33,11 @@ function updateTasks() {
     this.parentNode.classList = "";
 }
 
+function itemKeypress(e){
+    if (e.which === 13) {
+        updateTasks.call(this);
+      }
+}
 // add new item
 document.getElementById("addT").addEventListener("click", addTask)
 
