@@ -5,11 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>to-do list</title>
+    <link rel="stylesheet" href="log-in.css">
 </head>
 
 <body>
 
-    <template id="log-in">
+    <template id="log-in-page">
         <form>
             <label for="name">Name:</label><br>
             <input type="text" id="name" name="name" required="" min="4" max="20"><br><br>
@@ -23,9 +24,21 @@
 
     <template id="list">
         <h1>to-do list:</h1>
-        <p>homework</p>
-    </template>
+        <button id="addT">add task</button>
+        <button id="removeT">remove task</button>
 
+        <ul id="TDlist">
+            <li><span>homework</span>
+                <input value="homework">
+            </li>
+        </ul>
+    </template>
+    <template class="add">
+        <li class="edit">
+            <span></span>
+            <input value="">
+        </li>
+    </template>
 
 
     <div class="container">
@@ -33,6 +46,7 @@
     </div>
 
     <script src="log-in.js"></script>
+    <script src="toDoList.js"></script>
 </body>
 
 </html>
