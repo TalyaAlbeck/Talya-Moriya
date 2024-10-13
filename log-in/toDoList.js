@@ -50,8 +50,15 @@ function addTask(e) {
     liItem.addEventListener("click", editTasks);
     nInput.addEventListener("blur", updateTasks);
     index++;
-}
 
+    let removerButtons=document.getElementsByClassName("removeItem")
+    removerButtons[removerButtons.length-1].addEventListener('click',removeItem);
+
+}
+//remove item
+function removeItem(){
+    this.parentNode.remove()
+}
 
 //save the list in local storage
 
