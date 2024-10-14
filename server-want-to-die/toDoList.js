@@ -39,7 +39,7 @@ function itemKeypress(e) {
     }
 }
 // add new item
-document.getElementById("addT").addEventListener("click", addTask)
+// document.getElementById("addT").addEventListener("click", addTask)
 
 function addTask(e) {
     e.preventDefault();

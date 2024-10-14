@@ -1,17 +1,6 @@
 
-const container = document.getElementsByClassName("container")[0];
 
-//show the templates
 
-function showPage(tem) {
-    const template = document.querySelector(tem);
-    container.innerHTML = ``;
-    const clone = template.content.cloneNode(true)
-    container.appendChild(clone);
-}
-
-// showPage("#log-in-page")
-showPage("#list")
 
 //log in or sign up page
 
