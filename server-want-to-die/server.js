@@ -2,14 +2,13 @@ function serverActions(requestObj){
 
 }
 
-
-
 function checkRequestType(requestObj) {
     if (requestObj.request === "get") {
         return get(requestObj.url);
     } else if (requestObj.request === "post") {
         post(requestObj.url, requestObj.content);
-        return;
+        return DBstatus;
+
     } else if (requestObj.request === "put") {
         put(requestObj.url, requestObj.content);
     } else {
@@ -40,7 +39,7 @@ function post(url, content) {
 
 
 }
-post("http/users/addUser", { userName: 'Moriya', password: 12345, });
+// post("http/users/addUser", { userName: 'Moriya', password: 12345, });
 
 
 

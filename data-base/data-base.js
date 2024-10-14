@@ -1,4 +1,4 @@
-
+let DBstatus = 0;
 
 function getAllUsers() {
     if (!localStorage.getItem("users")) {
@@ -15,42 +15,72 @@ function addUser(name, password) {
     }
 
     const newArr = Array.from(data)
-
-    newArr.push({
-        name,
-        password,
-        list: []
-    })
+    if (GetUser(name)) {
+        return "this user alredy exist"
+    } else {
+        newArr.push({
+            name,
+            password,
+            id: newArr.length + 1,
+            list: []
+        })
+    }
 
     localStorage.setItem("users", JSON.stringify(newArr))
-    return "user added!"
+    DBstatus = 200;
+    // return "user added!"
 
 
 }
 
-addUser("talya", "12345")
+addUser("talya", 12345)
 
-function GetUser(name, password) {
+function logInUser(name, password) {
     let checkUser = getAllUsers()
     for (const user of checkUser) {
         if (name === user.name && password === user.password) {
             return user
         }
     }
-    return "user does not exist"
+    DBstatus = 404;
+    // return "user does not exist"
 }
 
-GetUser("talya", "12345")
+// logInUser("talya", "12345")
 
-function addToDoList(userName, toDo) {
-    
-    console.log('user: ', user);
-    
-    user.list += toDo;
+function GetUser(name) {
+    let checkUser = getAllUsers()
+    for (const user of checkUser) {
+        if (name === user.name) {
+            return user
+        }
+    }
+}
+
+function addToDoList(name, toDo) {
+    let user = GetUser(name)
+    console.log(user.list);
+
+    user.list.push(toDo);
+    let users = getAllUsers()
+    users[user.id - 1] = user
+    localStorage.setItem("users", JSON.stringify(users))
+
+
+    return user.list;
 }
 
 function changeList(name, newList) {
-    GetUser(user.name, user.password)
-    user.list = newList;
+    let user = GetUser(name)
+    user.list = [newList];
+    let users = getAllUsers()
+    users[user.id - 1] = user
+    localStorage.setItem("users", JSON.stringify(users))
 }
+
+addToDoList("talya", "dinner")
+changeList("talya", "ninini")
+changeList("talya", "nanana")
+addToDoList("talya", "something")
+
 
