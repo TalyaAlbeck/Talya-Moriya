@@ -10,13 +10,14 @@ class fajaxRequest {
     }
 }
 
-let x = new fajaxRequest("get", "http://api/home.html", "blabliblu");
-console.log(x);
-x.onload = function () {
-    console.log("lilili");
-}
-x.send();
+// let x = new fajaxRequest("get", "http://api/home.html", "blabliblu");
+// console.log(x);
+// x.onload = function () {
+//     console.log("lilili");
+// }
+// x.send();
 
 
 
+// let logInFajax = new fajaxRequest("post", "", userObj)
 
