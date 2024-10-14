@@ -5,12 +5,12 @@ function showPage(tem) {
     container.innerHTML = ``;
     const clone = template.content.cloneNode(true)
     container.appendChild(clone);
-    if (tem==="#log-in-page"){
-        
+    if (tem === "#log-in-page") {
+
         document.getElementById("log-in").addEventListener("click", logInButton)
-        document.getElementById("sign-up").addEventListener("click", signUpButton) 
-    }else if(tem==="#list"){
-       
+        document.getElementById("sign-up").addEventListener("click", signUpButton)
+    } else if (tem === "#list") {
+
         document.getElementById("addT").addEventListener("click", addTask)
         document.getElementById("save").addEventListener("click", saveInServer)
 

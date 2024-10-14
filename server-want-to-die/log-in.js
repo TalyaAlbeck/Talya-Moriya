@@ -1,7 +1,3 @@
-
-
-
-
 //log in or sign up page
 
 function logInButton(e) {
@@ -14,8 +10,15 @@ function logInButton(e) {
 
 function signUpButton(e) {
     e.preventDefault();
-
-    console.log("hi");
+    let userName=document.getElementById("name").value;
+    let password=document.getElementById("pass").value;
+    let userObj = {userName:userName, password:password} ;
+    let signUpFajax = new fajaxRequest("post","server-want-to-die/api/users/addUser",userObj)
+        signUpFajax.onload = ()=>{
+           alert("you have signed up successfully ")
+            showPage("#list")
+        }
+        signUpFajax.send()
 
     showPage("#list")
 }
