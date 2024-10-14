@@ -6,7 +6,7 @@ let index = 0;
 
 
 function addEditAndRemoveClass() {
-let TDlist = document.getElementById("TDlist");
+    let TDlist = document.getElementById("TDlist");
     let tasks = TDlist.querySelectorAll("li")
     let inputs = TDlist.querySelectorAll("input")
     for (let i = 0; i < tasks.length; i++) {
@@ -74,6 +74,22 @@ function removeItem() {
 //save the list in local storage
 
 function saveInServer() {
-    console.log("hi");
-    console.log(toDoList);
+    let listArr = []
+    let lis = document.querySelectorAll("li")
+
+    for (let i = 0; i < lis.length; i++) {
+        listArr.push(lis[i].innerText)
+    }
+    console.log(listArr);
+
+    let corentUser = localStorage.getItem("corentUser")
+    let userObj = { userName: corentUser, list: listArr }
+
+    let saveFajax = new fajaxRequest("post", "server-want-to-die/api/users/changeList", userObj)
+    saveFajax.onload = function () {
+        console.log("lalala");
+
+        alert("yoopi-doo")
+    }
+    saveFajax.send();
 }

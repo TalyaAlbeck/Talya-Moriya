@@ -1,4 +1,4 @@
-function serverActions(requestObj){
+function serverActions(requestObj) {
 
 }
 
@@ -27,12 +27,17 @@ function post(url, content) {
     const splitUrl = url.split("/");
     switch (splitUrl[3]) {
         case "addUser":
-            return addUser(content.userName, content.password)
+            if (addUser(content.userName, content.password)) {
+                return true;
+            } else {
+                addUser(content.userName, content.password)
+            }
             break;
         case "addToDoList":
             return addToDoList(content.userName, content.listItem)
             break;
-        case changeList:
+        case "changeList":
+
             return changeList(content.userName, content.list)
             break;
         default:
