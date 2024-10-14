@@ -21,7 +21,13 @@ function post(url, content) {
     const splitUrl = url.split("/");
     switch (splitUrl[2]) {
         case "addUser":
-            addUser(content.userName, content.password)
+            return addUser(content.userName, content.password)
+            break;
+        case "addToDoList":
+            return addToDoList(content.userName, content.listItem)
+            break;
+        case changeList:
+            return changeList(content.userName, content.list)
             break;
         default:
             return false;
@@ -29,9 +35,7 @@ function post(url, content) {
 
 
 }
-post("http/users/addUser", { userName: 'Moriya', password: 12345, });
-
-
+// post("http/users/addUser", { userName: 'Moriya', password: 12345, });
 
 
 
