@@ -12,8 +12,10 @@ function showPage(tem) {
     }else if(tem==="#list"){
        
         document.getElementById("addT").addEventListener("click", addTask)
+        document.getElementById("save").addEventListener("click", saveInServer)
+
     }
 }
 
-// showPage("#log-in-page")
-showPage("#list")
+showPage("#log-in-page")
+// showPage("#list")
