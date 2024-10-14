@@ -4,29 +4,28 @@ function serverActions(requestObj){
 
 function checkRequestType(requestObj) {
     console.log("hellooooo");
-    return
-    // if (requestObj.request === "get") {
-
-    //     return get(requestObj.url);
-    // } else if (requestObj.request === "post") {
-    //     post(requestObj.url, requestObj.content);
-    //     return DBstatus;
-
-    // } else if (requestObj.request === "put") {
-    //     put(requestObj.url, requestObj.content);
-    // } else {
-    //     console.log("this kind of request is not defind");
-    // }
+    switch(requestObj.request){
+        case "get":
+            return get(requestObj.url);
+        break;
+        case "post":
+            post(requestObj.url, requestObj.content);
+            return DBstatus;
+        break;
+        default:
+            return "this kind of request is not defind";
+    }
 }
 
 function get(url) {
     const splitUrl = url.split("/");
+    console.log('splitUrl: ', splitUrl);
     //calls the data base function and sends the result back to the client
 }
-
+get("server-want-to-die/api/users/addUser")
 function post(url, content) {
     const splitUrl = url.split("/");
-    switch (splitUrl[2]) {
+    switch (splitUrl[3]) {
         case "addUser":
             return addUser(content.userName, content.password)
             break;
