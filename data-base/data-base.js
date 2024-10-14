@@ -42,12 +42,15 @@ function GetUser(name, password) {
 
 GetUser("talya", "12345")
 
-function uddToDo(name, toDo) {
-    GetUser(user.name, user.password)
-    user.list = toDo;
+function addToDoList(userName, toDo) {
+    
+    console.log('user: ', user);
+    
+    user.list += toDo;
 }
 
 function changeList(name, newList) {
     GetUser(user.name, user.password)
     user.list = newList;
 }
+
