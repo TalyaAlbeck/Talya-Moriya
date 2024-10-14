@@ -11,7 +11,7 @@ function addEditAndRemoveClass() {
     for (let i = 0; i < tasks.length; i++) {
         tasks[i].addEventListener("click", editTasks);
         inputs[i].addEventListener("blur", updateTasks);
-        inputs[i].addEventListener('keypress',itemKeypress);
+        inputs[i].addEventListener('keypress', itemKeypress);
     }
     const removerButtons = document.getElementsByClassName("removeItem")
     for (let j = 0; j < removerButtons.length; j++) {
@@ -33,10 +33,10 @@ function updateTasks() {
     this.parentNode.classList = "";
 }
 
-function itemKeypress(e){
+function itemKeypress(e) {
     if (e.which === 13) {
         updateTasks.call(this);
-      }
+    }
 }
 // add new item
 document.getElementById("addT").addEventListener("click", addTask)
@@ -57,6 +57,7 @@ function addTask(e) {
 
     liItem.addEventListener("click", editTasks);
     nInput.addEventListener("blur", updateTasks);
+    nInput.addEventListener('keypress', itemKeypress);
     index++;
 
     let removerButtons = document.getElementsByClassName("removeItem")
