@@ -1,15 +1,18 @@
 function checkRequestType(requestObj) {
-    if (requestObj.request === "get") {
-        return get(requestObj.url);
-    } else if (requestObj.request === "post") {
-        post(requestObj.url, requestObj.content);
-        return DBstatus;
+    console.log("hellooooo");
+    return
+    // if (requestObj.request === "get") {
 
-    } else if (requestObj.request === "put") {
-        put(requestObj.url, requestObj.content);
-    } else {
-        console.log("this kind of request is not defind");
-    }
+    //     return get(requestObj.url);
+    // } else if (requestObj.request === "post") {
+    //     post(requestObj.url, requestObj.content);
+    //     return DBstatus;
+
+    // } else if (requestObj.request === "put") {
+    //     put(requestObj.url, requestObj.content);
+    // } else {
+    //     console.log("this kind of request is not defind");
+    // }
 }
 
 function get(url) {
