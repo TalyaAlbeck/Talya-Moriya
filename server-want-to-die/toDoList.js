@@ -1,11 +1,12 @@
 
 let index = 0;
-let TDlist = document.getElementById("TDlist");
+// let TDlist = document.getElementById("TDlist");
 // let tasks = TDlist.querySelectorAll("li")
 // let inputs = TDlist.querySelectorAll("input")
 
 
 function addEditAndRemoveClass() {
+let TDlist = document.getElementById("TDlist");
     let tasks = TDlist.querySelectorAll("li")
     let inputs = TDlist.querySelectorAll("input")
     for (let i = 0; i < tasks.length; i++) {
@@ -18,7 +19,7 @@ function addEditAndRemoveClass() {
         removerButtons[j].addEventListener('click', removeItem);
     }
 }
-addEditAndRemoveClass()
+
 function editTasks() {
     this.classList = "edit";
     let input = this.querySelector("input");
@@ -43,6 +44,7 @@ function itemKeypress(e) {
 
 function addTask(e) {
     e.preventDefault();
+    let TDlist = document.getElementById("TDlist");
     let add = document.getElementsByClassName("add")[0]
     const div = document.createElement("div");
 
@@ -75,5 +77,3 @@ function saveInServer() {
     console.log("hi");
     console.log(toDoList);
 }
-
-document.getElementById("save").addEventListener("click", saveInServer)

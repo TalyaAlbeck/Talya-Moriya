@@ -1,15 +1,24 @@
 
-
-
-
 //log in or sign up page
 
 function logInButton(e) {
     e.preventDefault();
 
-    console.log("hi");
+    let userName = document.getElementById("name").value
+    let password = document.getElementById("pass").value
 
-    showPage("#list")
+    let userObj = { userName: userName, password: password }
+
+    console.log(userObj);
+
+    let logInFajax = new fajaxRequest("post", "server-want-to-die/api/users/logInUser", userObj)
+    logInFajax.onload = function () {
+        console.log("lilili");
+
+        alert("yoopi-doo")
+        showPage("#list")
+    }
+    logInFajax.send();
 }
 
 function signUpButton(e) {
@@ -19,6 +28,3 @@ function signUpButton(e) {
 
     showPage("#list")
 }
-
-// document.getElementById("log-in").addEventListener("click", logInButton)
-// document.getElementById("sign-up").addEventListener("click", signUpButton)
