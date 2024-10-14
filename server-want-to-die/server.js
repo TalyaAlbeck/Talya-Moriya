@@ -3,7 +3,8 @@ function checkRequestType(requestObj) {
         return get(requestObj.url);
     } else if (requestObj.request === "post") {
         post(requestObj.url, requestObj.content);
-        return 200;
+        return DBstatus;
+
     } else if (requestObj.request === "put") {
         put(requestObj.url, requestObj.content);
     } else {
@@ -18,18 +19,19 @@ function get(url) {
 
 function post(url, content) {
     const splitUrl = url.split("/");
-    console.log('splitUrl: ', splitUrl[2]);
-    console.log(typeof splitUrl[2]);
-    switch(splitUrl[2]){
-       case "addUser": 
-        addUser(content.userName, content.password)
-       break;
-       default:
-        return false;
+    switch (splitUrl[2]) {
+        case "addUser":
+            addUser(content.userName, content.password)
+            break;
+        default:
+            return false;
     };//calls the data base function
-    
-    
+
+
 }
-post("http/users/addUser",{userName:'Moriya',password:12345,});
+post("http/users/addUser", { userName: 'Moriya', password: 12345, });
+
+
+
 
 

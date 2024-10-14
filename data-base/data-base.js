@@ -1,4 +1,4 @@
-
+let DBstatus = 0;
 
 function getAllUsers() {
     if (!localStorage.getItem("users")) {
@@ -19,16 +19,18 @@ function addUser(name, password) {
     newArr.push({
         name,
         password,
+        id: newArr.length + 1,
         list: []
     })
 
     localStorage.setItem("users", JSON.stringify(newArr))
-    return "user added!"
+    DBstatus = 200;
+    // return "user added!"
 
 
 }
 
-addUser("talya", "12345")
+addUser("talya", 12345)
 
 function GetUser(name, password) {
     let checkUser = getAllUsers()
@@ -37,14 +39,15 @@ function GetUser(name, password) {
             return user
         }
     }
-    return "user does not exist"
+    DBstatus = 404;
+    // return "user does not exist"
 }
 
 GetUser("talya", "12345")
 
-function uddToDo(name, toDo) {
+function addToDoList(name, toDo) {
     GetUser(user.name, user.password)
-    user.list = toDo;
+    user.list += toDo;
 }
 
 function changeList(name, newList) {
