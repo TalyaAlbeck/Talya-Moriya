@@ -16,7 +16,8 @@ function addUser(name, password) {
 
     const newArr = Array.from(data)
     if (GetUser(name)) {
-        return "this user alredy exist"
+        // alert("this user alredy exist")
+        return true
     } else {
         newArr.push({
             name,
@@ -78,9 +79,5 @@ function changeList(name, newList) {
     localStorage.setItem("users", JSON.stringify(users))
 }
 
-addToDoList("talya", "dinner")
-changeList("talya", "ninini")
-changeList("talya", "nanana")
-addToDoList("talya", "something")
 
 

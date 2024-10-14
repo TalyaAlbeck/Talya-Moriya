@@ -3,9 +3,10 @@ class fajaxRequest {
         this.request = request;
         this.url = url;
         this.content = content;
+        this.response = null;
     }
     send() {
-        checkRequestType(this)
+        this.response = checkRequestType(this)
         this.onload()
     }
 }
