@@ -14,7 +14,7 @@ function logInButton(e) {
     logInFajax.onload = function () {
         console.log("lilili");
 
-        localStorage.setItem("corentUser", userName)
+        localStorage.setItem("corentUser", [userName])
 
         alert("yoopi-doo")
         showPage("#list")

@@ -10,15 +10,30 @@
 
 <body>
 
+    <nav>
+        <a data-section="log-in-page" class="link">
+            <p>Log in</p>
+        </a>
+        <a data-section="list" class="link">
+            <p>To-do list</p>
+        </a>
+        <a data-section="log-out" class="link">
+            <p>Log out</p>
+        </a>
+    </nav>
+
     <template id="log-in-page">
         <form>
-            <label for="name">Name:</label><br>
-            <input type="text" id="name" name="name" required="" min="4" max="20"><br><br>
-            <label for="Password">Password:</label><br>
-            <input type="password" id="pass" name="Password" required="" min="4" max="20"><br><br>
+            <div id="form">
+                <label for="name">Name:</label><br>
+                <input type="text" id="name" name="name" required="" min="4" max="20"><br><br>
+                <label for="Password">Password:</label><br>
+                <input type="password" id="pass" name="Password" required="" min="4" max="20"><br><br>
 
-            <a><button id="log-in" class="button">Log in </button></a>
-            <a><button id="sign-up" class="button">Sign up </button></a>
+                <a><button id="log-in" class="button">Log in</button></a>
+                <a><button id="sign-up" class="button">Sign up</button></a>
+
+
         </form>
     </template>
 
@@ -38,6 +53,10 @@
             <input class="input" value="">
             <button class="removeItem"><img src="./photos/trash can.png" alt="remove item"></button>
         </li>
+    </template>
+
+    <template id="log-out">
+        <button id="logOut" class="button">log out</button>
     </template>
 
 
