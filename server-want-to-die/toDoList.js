@@ -87,8 +87,6 @@ function saveInServer() {
 
     let saveFajax = new fajaxRequest("post", "server-want-to-die/api/users/changeList", userObj)
     saveFajax.onload = function () {
-        console.log("lalala");
-
         alert("yoopi-doo")
     }
     saveFajax.send();

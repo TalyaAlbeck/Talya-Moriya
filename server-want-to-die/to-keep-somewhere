@@ -1,12 +1,2 @@
-function logOutButton() {
-    let logOutFajax = new fajaxRequest("delete", "server-want-to-die/api/users/logOutButton", userObj)
-    logOutFajax.onload = function () {
-        console.log("log t");
 
-        // localStorage.setItem("corentUser", [userName])
-        showPage("#log-in-page")
-        // localStorage.clear("corentUser")
-    }
-    logOutFajax.send();
-}
 
