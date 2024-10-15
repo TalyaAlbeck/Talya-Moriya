@@ -5,6 +5,7 @@ li input {
 li.edit span {
   display: none;
 }
+
 li.edit input {
   display: initial;
 }
@@ -15,63 +16,4 @@ li button {
 li button img {
   margin-top: 1px;
   height: 15px;
-}
-
-#logOut {
-  background-color: darkblue;
-  color: white;
-  position: absolute;
-  right: 480px;
-  top: 45%;
-  width: 100px;
-  height: 50px;
-  transition: all 0.5s;
-}
-#logOut:hover {
-  background-color: rgb(67, 125, 153);
-  width: 130px;
-  height: 60px;
-  font-size: larger;
-}
-
-form {
-  border: 1.5px solid rgb(22, 4, 96);
-  box-sizing: border-box;
-  margin: 100px auto;
-  padding-top: 20px;
-  background-color: lightblue;
-  display: flex;
-  text-align: center;
-  justify-content: center;
-  padding: 0% auto;
-  height: 200px;
-  width: 250px;
-}
-form input {
-  background-color: rgb(206, 238, 248);
-  border: 1px solid black;
-}
-form button {
-  background-color: darkblue;
-  color: white;
-}
-form button:hover {
-  background-color: rgb(77, 88, 202);
-}
-
-nav {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  text-align: center;
-  padding: 20px 0;
-}
-nav a {
-  color: darkblue;
-  border: 1.5px solid darkblue;
-  padding: 0 7%;
-  background-color: lightblue;
-}
-nav a:hover {
-  background-color: rgb(89, 127, 155);
 }/*# sourceMappingURL=log-in.css.map */

@@ -16,7 +16,7 @@ function logInButton(e) {
         
         console.log("lilili");
 
-        localStorage.setItem("corentUser", [userName])
+        localStorage.setItem("corentUser", userName)
 
         alert("yoopi-doo")
         showPage("#list")

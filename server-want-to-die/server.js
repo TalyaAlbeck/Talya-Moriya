@@ -17,21 +17,10 @@ function checkRequestType(requestObj) {
 
 function get(url) {
     const splitUrl = url.split("/");
-
-    switch (splitUrl[3]) {
-        case "GetUser":
-            console.log(userList);
-
-            //need to also check in splitUrl[4] to get spesific list from user
-
-            break;
-    }
+    console.log('splitUrl: ', splitUrl);
     //calls the data base function and sends the result back to the client
 }
-
-// get("http/users/ninini/GetUser" + userId)
-//==================================================================================
-
+// get("server-want-to-die/api/users/addUser")
 function post(url, content) {
     const splitUrl = url.split("/");
     switch (splitUrl[3]) {
