@@ -2,14 +2,16 @@
 
 function checkRequestType(requestObj) {
     console.log("hellooooo");
-    if (requestObj.request === "get") {
-        return get(requestObj.url);
-    } else if (requestObj.request === "post") {
-        return post(requestObj.url, requestObj.content);
-    } else if (requestObj.request === "put") {
-        return put(requestObj.url, requestObj.content);
-    } else {
-        console.log("this kind of request is not defind");
+    switch (requestObj.request) {
+        case "get":
+            return get(requestObj.url);
+            break;
+        case "post":
+            return post(requestObj.url, requestObj.content);
+
+            break;
+        default:
+            return "this kind of request is not defind";
     }
 }
 
@@ -37,7 +39,7 @@ function post(url, content) {
             if (addUser(content.userName, content.password)) {
                 return true;
             } else {
-                addUser(content.userName, content.password)
+                return false;
             }
             break;
         case "addToDoList":
@@ -46,6 +48,9 @@ function post(url, content) {
         case "changeList":
 
             return changeList(content.userName, content.list)
+            break;
+        case "logInUser":
+            logInUser(content.userName, content.password)
             break;
         default:
             return false;
