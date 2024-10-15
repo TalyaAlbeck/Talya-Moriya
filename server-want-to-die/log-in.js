@@ -14,7 +14,7 @@ function logInButton(e) {
     logInFajax.onload = function () {
         console.log("lilili");
 
-        localStorage.setItem("corentUser", userName)
+        localStorage.setItem("corentUser", [userName])
 
         alert("yoopi-doo")
         showPage("#list")
@@ -41,4 +41,18 @@ function signUpButton(e) {
     signUpFajax.send()
 
     // showPage("#list") 
+}
+
+function logOutButton() {
+    // let logOutFajax = new fajaxRequest("delete", "server-want-to-die/api/users/logOutButton", userObj)
+    // logOutFajax.onload = function () {
+    //     console.log("log out");
+
+    //     // localStorage.setItem("corentUser", [userName])
+    //     showPage("#log-in-page")
+    //     // localStorage.clear("corentUser")
+    // }
+    // logOutFajax.send();
+    console.log("loged out");
+
 }
