@@ -1,6 +1,4 @@
-function serverActions(requestObj) {
 
-}
 
 function checkRequestType(requestObj) {
     console.log("hellooooo");
@@ -9,8 +7,8 @@ function checkRequestType(requestObj) {
             return get(requestObj.url);
         break;
         case "post":
-            post(requestObj.url, requestObj.content);
-            return DBstatus;
+            return post(requestObj.url, requestObj.content);
+            
         break;
         default:
             return "this kind of request is not defind";
@@ -22,7 +20,7 @@ function get(url) {
     console.log('splitUrl: ', splitUrl);
     //calls the data base function and sends the result back to the client
 }
-get("server-want-to-die/api/users/addUser")
+// get("server-want-to-die/api/users/addUser")
 function post(url, content) {
     const splitUrl = url.split("/");
     switch (splitUrl[3]) {
@@ -30,7 +28,7 @@ function post(url, content) {
             if (addUser(content.userName, content.password)) {
                 return true;
             } else {
-                addUser(content.userName, content.password)
+               return false;
             }
             break;
         case "addToDoList":
@@ -39,6 +37,9 @@ function post(url, content) {
         case "changeList":
 
             return changeList(content.userName, content.list)
+            break;
+        case "logInUser":
+            logInUser(content.userName, content.password)
             break;
         default:
             return false;

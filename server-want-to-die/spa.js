@@ -9,6 +9,8 @@ function showPage(tem) {
 
         document.getElementById("log-in").addEventListener("click", logInButton)
         document.getElementById("sign-up").addEventListener("click", signUpButton)
+        console.log(template.content);
+        
     } else if (tem === "#list") {
 
         document.getElementById("addT").addEventListener("click", addTask)
